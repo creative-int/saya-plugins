@@ -1,0 +1,8 @@
+{
+	"mcpServers": {
+		"saya": {
+			"url": "https://saya-mcp.luke-nittmann.workers.dev/mcp",
+			"transport": "streamable-http"
+		}
+	}
+}

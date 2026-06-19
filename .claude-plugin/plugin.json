@@ -1,0 +1,55 @@
+{
+	"name": "saya",
+	"version": "0.1.0",
+	"description": "Query your team's brain — memory, channels, decisions, skills — and delegate to Saya, from any agent.",
+	"author": {
+		"name": "creative-int",
+		"email": "support@saya.computer"
+	},
+	"homepage": "https://saya.computer",
+	"repository": "https://github.com/creative-int/saya-plugins.git",
+	"license": "MIT",
+	"keywords": [
+		"saya",
+		"mcp",
+		"team-memory",
+		"slack",
+		"agent-context",
+		"workspace-context",
+		"team-brain"
+	],
+	"displayName": "Saya",
+	"skills": "./skills",
+	"mcpServers": "./.mcp.json",
+	"metadata": {
+		"tools": [
+			{
+				"name": "saya_context",
+				"scope": "saya.context",
+				"description": "Read bounded, workspace-scoped Saya context across team memory, Slack-visible channels, decisions, skills, and readiness state."
+			},
+			{
+				"name": "saya_act",
+				"scope": "saya.act",
+				"description": "Run one curated, idempotent, approval-first action through Saya."
+			},
+			{
+				"name": "saya_status",
+				"scope": "saya.status",
+				"description": "Check Saya MCP readiness, tool availability, adapter status, and next setup steps."
+			}
+		],
+		"scopes": [
+			"saya.context",
+			"saya.act",
+			"saya.status"
+		],
+		"readiness": "Repo-local v1: the deployed MCP endpoint and three-tool surface are live, but saya_context currently returns deterministic placeholder data until the Convex and Slack live-data adapters are wired. The mcp.saya.computer custom domain is not routed yet.",
+		"mcp": {
+			"id": "saya",
+			"url": "https://saya-mcp.luke-nittmann.workers.dev/mcp",
+			"transport": "streamable-http",
+			"futureUrl": "https://mcp.saya.computer/mcp"
+		}
+	}
+}
