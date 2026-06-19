@@ -1,7 +1,7 @@
 {
 	"name": "saya",
 	"version": "0.1.0",
-	"description": "Query your team's brain — memory, channels, decisions, skills — and delegate to Saya, from any agent.",
+	"description": "Connect agents to Saya's live, trust-graded team brain over remote MCP.",
 	"author": {
 		"name": "creative-int",
 		"email": "support@saya.computer"
@@ -26,17 +26,17 @@
 			{
 				"name": "saya_context",
 				"scope": "saya.context",
-				"description": "Read bounded, workspace-scoped Saya context across team memory, Slack-visible channels, decisions, skills, and readiness state."
+				"description": "Read bounded, workspace-scoped Saya context: provenance-graded team knowledge, lifecycle status, trust grade, decisions, skills, and captured workspace memory."
 			},
 			{
 				"name": "saya_act",
 				"scope": "saya.act",
-				"description": "Run one curated, idempotent, approval-first action through Saya."
+				"description": "Save approved team memory through Saya's curated, idempotent, approval-first action path."
 			},
 			{
 				"name": "saya_status",
 				"scope": "saya.status",
-				"description": "Check Saya MCP readiness, tool availability, adapter status, and next setup steps."
+				"description": "Check live Saya MCP readiness, tool availability, auth posture, and Convex bridge health."
 			}
 		],
 		"scopes": [
@@ -44,7 +44,7 @@
 			"saya.act",
 			"saya.status"
 		],
-		"readiness": "Repo-local v1: the deployed MCP endpoint and three-tool surface are live, but saya_context currently returns deterministic placeholder data until the Convex and Slack live-data adapters are wired. The mcp.saya.computer custom domain is not routed yet.",
+		"readiness": "Live prod: the workers.dev MCP origin serves the real Convex-backed team brain. Authenticated saya_context queries return trust-graded workspace knowledge; saya_act is approval-first save_memory; saya_status reports live bridge health. The mcp.saya.computer custom domain is not routed yet.",
 		"mcp": {
 			"id": "saya",
 			"url": "https://saya-mcp.luke-nittmann.workers.dev/mcp",
