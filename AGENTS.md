@@ -29,14 +29,15 @@ needs a manifest, add the manifest builder to the `files` map. Regenerate.
 
 - v0: central remote MCP metadata + 3 client manifests + `.mcp.json` +
   `server.json` + one secondary usage-guide skill, generated.
-- Deferred: production custom domain `https://mcp.saya.computer/mcp` after
-  Cloudflare/DNS routing, and live Convex/Slack adapter claims after they are
-  wired in the Saya app.
+- Live origin: `https://saya-mcp.luke-nittmann.workers.dev/mcp`. Deferred:
+  production custom domain `https://mcp.saya.computer/mcp` after Cloudflare/DNS
+  routing.
 
 Positioning is **inbound MCP, not a skill pack**. Keep `saya-team-brain` as usage
 guidance; the MCP endpoint is the product surface. Keep readiness claims honest:
-repo-local v1 currently returns deterministic placeholder context until live data
-adapters are connected.
+the workers.dev origin is live and returns real Convex-backed, trust-graded team
+knowledge for authenticated workspace members; the vanity domain is not routed
+yet.
 
 CLAUDE.md is a symlink to this file.
 

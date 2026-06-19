@@ -39,7 +39,7 @@ export const installClients = [
 		id: "mcp",
 		label: "Any MCP client (.mcp.json)",
 		blurb:
-			"Point your client at Saya's central remote MCP endpoint. This JSON fallback is the safest path while remote MCP auth support varies by client.",
+			"Add Saya as a Streamable HTTP MCP server at the live workers.dev origin. When your client prompts, complete browser OAuth for your team; the per-team bearer belongs in the client credential store, never in this repo.",
 		steps: [
 			json({
 				mcpServers: {
@@ -55,13 +55,14 @@ export const installClients = [
 		id: "skills",
 		label: "Any agent (npx skills)",
 		blurb:
-			"Installs the secondary usage-guide skill for skill-aware agents. The MCP endpoint remains the main product surface.",
+			"Installs the secondary usage-guide skill for skill-aware agents. This teaches when to query Saya; the live MCP endpoint remains the product surface.",
 		steps: [`npx skills add ${slug()}`],
 	},
 	{
 		id: "claude-code",
 		label: "Claude Code",
-		blurb: "Add the marketplace, then install the Saya plugin.",
+		blurb:
+			"Add the marketplace, install the Saya plugin, then complete browser OAuth before the first team-brain query.",
 		steps: [
 			`/plugin marketplace add ${slug()}`,
 			`/plugin install ${saya.name}@${saya.name}`,
@@ -70,13 +71,15 @@ export const installClients = [
 	{
 		id: "codex",
 		label: "Codex",
-		blurb: "Add this repo as a Codex plugin marketplace, then install from /plugins.",
+		blurb:
+			"Add this repo as a Codex plugin marketplace, install from /plugins, then authenticate the MCP connection for your workspace.",
 		steps: [`codex plugin marketplace add ${slug()}`],
 	},
 	{
 		id: "cursor",
 		label: "Cursor",
-		blurb: "Install Saya from the Cursor plugin marketplace.",
+		blurb:
+			"Install Saya from the Cursor plugin marketplace, then authenticate the MCP connection for your workspace.",
 		steps: [`Cursor -> Settings -> Plugins -> Add marketplace -> ${slug()}`],
 	},
 ];

@@ -59,11 +59,11 @@ export const saya: SayaConfig = {
 	name: "saya",
 	displayName: "Saya",
 	version: "0.1.0",
-	tagline: "Plug any agent into your team's Saya.",
+	tagline: "Before you guess, ask the team brain.",
 	shortDescription:
-		"Query your team's brain — memory, channels, decisions, skills — and delegate to Saya, from any agent.",
+		"Connect agents to Saya's live, trust-graded team brain over remote MCP.",
 	longDescription:
-		"Saya lets an external agent ask the team brain before it guesses: bounded workspace memory, Slack-visible channel context, prior decisions, and team skills through one remote MCP endpoint. The curated surface stays intentionally small: `saya_context` for workspace-scoped reads, `saya_act` for one approval-first idempotent action path, and `saya_status` for readiness. Today the deployed MCP is repo-local v1: OAuth/resource metadata and the three-tool surface are live, but live Convex-backed team memory is not wired yet, so context responses are deterministic placeholders until the production adapters are connected.",
+		"Saya lets an external agent ask the team brain before it guesses. The production MCP exposes a deliberately small live surface: `saya_context` returns workspace-scoped, provenance- and trust-graded team knowledge from Saya's Convex brain; `saya_act` provides the approval-first `save_memory` action path; and `saya_status` reports live MCP and Convex health. Access is per-team OAuth bearer auth plus workspace membership. The working origin is the workers.dev MCP URL; the future `mcp.saya.computer` custom domain is not routed yet.",
 	homepage: "https://saya.computer",
 	repository: "https://github.com/creative-int/saya-plugins",
 	license: "MIT",
@@ -92,24 +92,24 @@ export const saya: SayaConfig = {
 			name: "saya_context",
 			scope: "saya.context",
 			description:
-				"Read bounded, workspace-scoped Saya context across team memory, Slack-visible channels, decisions, skills, and readiness state.",
+				"Read bounded, workspace-scoped Saya context: provenance-graded team knowledge, lifecycle status, trust grade, decisions, skills, and captured workspace memory.",
 		},
 		{
 			name: "saya_act",
 			scope: "saya.act",
 			description:
-				"Run one curated, idempotent, approval-first action through Saya.",
+				"Save approved team memory through Saya's curated, idempotent, approval-first action path.",
 		},
 		{
 			name: "saya_status",
 			scope: "saya.status",
 			description:
-				"Check Saya MCP readiness, tool availability, adapter status, and next setup steps.",
+				"Check live Saya MCP readiness, tool availability, auth posture, and Convex bridge health.",
 		},
 	],
 	readiness: {
 		status:
-			"Repo-local v1: the deployed MCP endpoint and three-tool surface are live, but saya_context currently returns deterministic placeholder data until the Convex and Slack live-data adapters are wired. The mcp.saya.computer custom domain is not routed yet.",
+			"Live prod: the workers.dev MCP origin serves the real Convex-backed team brain. Authenticated saya_context queries return trust-graded workspace knowledge; saya_act is approval-first save_memory; saya_status reports live bridge health. The mcp.saya.computer custom domain is not routed yet.",
 	},
 	skill: {
 		name: "saya-team-brain",
