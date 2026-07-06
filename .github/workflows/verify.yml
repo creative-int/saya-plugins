@@ -2,8 +2,14 @@ name: verify
 
 on:
   push:
+    paths-ignore:
+      - "docs/**"
+      - "*.md"
     branches: [main]
   pull_request:
+    paths-ignore:
+      - "docs/**"
+      - "*.md"
 
 jobs:
   verify:
