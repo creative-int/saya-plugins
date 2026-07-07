@@ -2,6 +2,14 @@
 	"name": "@creative-int/saya-plugins",
 	"version": "0.1.0",
 	"private": true,
+	"appRepoProfile": "distribution-plugin",
+	"creativeInt": {
+		"workspaceLint": {
+			"allowedRootEntries": [
+				"saya.config.ts"
+			]
+		}
+	},
 	"description": "Saya Cursor, Codex, and Claude Code plugin manifests, the saya-team-brain usage skill, and central remote MCP wiring — generated from one canonical config.",
 	"keywords": [
 		"saya",
