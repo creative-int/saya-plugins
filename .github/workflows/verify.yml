@@ -11,9 +11,12 @@ on:
       - "docs/**"
       - "*.md"
 
+permissions:
+  contents: read
+
 jobs:
   verify:
-    runs-on: [self-hosted, macOS, ARM64, cic-macbook-pro]
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
       - uses: pnpm/action-setup@v4
