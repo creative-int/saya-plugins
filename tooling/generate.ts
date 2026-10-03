@@ -39,7 +39,7 @@ export const installClients = [
 		id: "mcp",
 		label: "Any MCP client (.mcp.json)",
 		blurb:
-			"Add Saya as a Streamable HTTP MCP server at the live workers.dev origin. When your client prompts, complete browser OAuth for your team; the per-team bearer belongs in the client credential store, never in this repo.",
+			"Add Saya as a Streamable HTTP MCP server at the live origin. When your client prompts, complete browser OAuth for your team; the per-team bearer belongs in the client credential store, never in this repo.",
 		steps: [
 			json({
 				mcpServers: {
@@ -105,7 +105,6 @@ function pluginMetadata() {
 			id: saya.mcp.id,
 			url: saya.mcp.url,
 			transport: saya.mcp.transport,
-			futureUrl: saya.mcp.futureUrl,
 		},
 	};
 }

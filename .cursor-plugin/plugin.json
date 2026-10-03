@@ -45,12 +45,11 @@
 			"saya.act",
 			"saya.status"
 		],
-		"readiness": "Live prod: the workers.dev MCP origin serves the real Convex-backed team brain. Authenticated saya_context queries return trust-graded workspace knowledge; saya_act is approval-first save_memory; saya_status reports live bridge health. The mcp.saya.computer custom domain is not routed yet.",
+		"readiness": "Live prod: the MCP origin serves the real Convex-backed team brain. Authenticated saya_context queries return trust-graded workspace knowledge; saya_act is approval-first save_memory; saya_status reports live bridge health. It is served at the mcp.saya.computer custom domain.",
 		"mcp": {
 			"id": "saya",
-			"url": "https://saya-mcp.luke-nittmann.workers.dev/mcp",
-			"transport": "streamable-http",
-			"futureUrl": "https://mcp.saya.computer/mcp"
+			"url": "https://mcp.saya.computer/mcp",
+			"transport": "streamable-http"
 		}
 	}
 }

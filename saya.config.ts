@@ -34,8 +34,6 @@ export interface SayaConfig {
 		/** Remote Streamable HTTP MCP endpoint. */
 		url: string;
 		transport: "streamable-http";
-		/** Future custom domain once DNS and Cloudflare routing are complete. */
-		futureUrl: string;
 	};
 	/** Reverse-DNS name for the official MCP Registry server.json. */
 	registryName: string;
@@ -63,7 +61,7 @@ export const saya: SayaConfig = {
 	shortDescription:
 		"Connect agents to Saya's live, trust-graded team brain over remote MCP.",
 	longDescription:
-		"Saya lets an external agent ask the team brain before it guesses. The production MCP exposes a deliberately small live surface: `saya_context` returns workspace-scoped, provenance- and trust-graded team knowledge from Saya's Convex brain; `saya_act` provides the approval-first `save_memory` action path; and `saya_status` reports live MCP and Convex health. Access is per-team OAuth bearer auth plus workspace membership. The working origin is the workers.dev MCP URL; the future `mcp.saya.computer` custom domain is not routed yet.",
+		"Saya lets an external agent ask the team brain before it guesses. The production MCP exposes a deliberately small live surface: `saya_context` returns workspace-scoped, provenance- and trust-graded team knowledge from Saya's Convex brain; `saya_act` provides the approval-first `save_memory` action path; and `saya_status` reports live MCP and Convex health. Access is per-team OAuth bearer auth plus workspace membership. The MCP origin is `https://mcp.saya.computer/mcp`.",
 	homepage: "https://saya.computer",
 	repository: "https://github.com/creative-int/saya-plugins",
 	license: "MIT",
@@ -81,10 +79,8 @@ export const saya: SayaConfig = {
 	logo: "./assets/logo.png",
 	mcp: {
 		id: "saya",
-		// TODO: switch to https://mcp.saya.computer/mcp once the custom domain is routed.
-		url: "https://saya-mcp.luke-nittmann.workers.dev/mcp",
+		url: "https://mcp.saya.computer/mcp",
 		transport: "streamable-http",
-		futureUrl: "https://mcp.saya.computer/mcp",
 	},
 	registryName: "io.github.creative-int/saya",
 	tools: [
@@ -109,7 +105,7 @@ export const saya: SayaConfig = {
 	],
 	readiness: {
 		status:
-			"Live prod: the workers.dev MCP origin serves the real Convex-backed team brain. Authenticated saya_context queries return trust-graded workspace knowledge; saya_act is approval-first save_memory; saya_status reports live bridge health. The mcp.saya.computer custom domain is not routed yet.",
+			"Live prod: the MCP origin serves the real Convex-backed team brain. Authenticated saya_context queries return trust-graded workspace knowledge; saya_act is approval-first save_memory; saya_status reports live bridge health. It is served at the mcp.saya.computer custom domain.",
 	},
 	skill: {
 		name: "saya-team-brain",
