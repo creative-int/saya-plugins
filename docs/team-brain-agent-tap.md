@@ -4,10 +4,8 @@ This repo distributes the public companion plugin layer for Saya's inbound MCP.
 The live product surface is:
 
 ```text
-https://saya-mcp.luke-nittmann.workers.dev/mcp
+https://mcp.saya.computer/mcp
 ```
-
-`https://mcp.saya.computer/mcp` is the future custom domain and is not routed yet.
 
 ## Runner-side sample flow
 

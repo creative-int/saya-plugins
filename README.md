@@ -14,7 +14,7 @@
 
 <p align="center">
   <a href="https://saya.computer">saya.computer</a> ·
-  MCP: <code>https://saya-mcp.luke-nittmann.workers.dev/mcp</code>
+  MCP: <code>https://mcp.saya.computer/mcp</code>
 </p>
 
 ---
@@ -25,13 +25,13 @@
 
 ### Any MCP client (.mcp.json)
 
-Add Saya as a Streamable HTTP MCP server at the live workers.dev origin. When your client prompts, complete browser OAuth for your team; the per-team bearer belongs in the client credential store, never in this repo.
+Add Saya as a Streamable HTTP MCP server at the live origin. When your client prompts, complete browser OAuth for your team; the per-team bearer belongs in the client credential store, never in this repo.
 
 ```json
 {
 	"mcpServers": {
 		"saya": {
-			"url": "https://saya-mcp.luke-nittmann.workers.dev/mcp",
+			"url": "https://mcp.saya.computer/mcp",
 			"transport": "streamable-http"
 		}
 	}
@@ -113,13 +113,10 @@ in repo files.
 ## Status / readiness
 
 The deployed endpoint is live on prod at
-`https://saya-mcp.luke-nittmann.workers.dev/mcp`. Production OAuth and
+`https://mcp.saya.computer/mcp`. Production OAuth and
 workspace membership are required; authenticated `saya_context` queries return
 real, trust-graded team knowledge from Saya's Convex brain. `saya_act` is the
 approval-first `save_memory` path, and `saya_status` reports live bridge health.
-
-The custom domain `https://mcp.saya.computer/mcp` is not routed yet, so this
-repo intentionally points at the current workers.dev origin.
 
 ## Included skill
 

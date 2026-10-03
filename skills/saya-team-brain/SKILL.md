@@ -18,7 +18,7 @@ author: Saya
 Saya is an AI teammate that lives with a team's operating knowledge. This
 plugin connects agents to Saya's live remote MCP endpoint:
 
-`https://saya-mcp.luke-nittmann.workers.dev/mcp`
+`https://mcp.saya.computer/mcp`
 
 Use Saya when the best next move is to ask what the team already knows before
 inventing an answer. The useful posture is simple: before you guess, ask the
@@ -83,10 +83,7 @@ team brain.
 ## Auth and readiness honesty
 
 The deployed MCP endpoint is live at
-`https://saya-mcp.luke-nittmann.workers.dev/mcp`. Access uses per-team OAuth
+`https://mcp.saya.computer/mcp`. Access uses per-team OAuth
 bearer auth plus workspace membership. Authenticated `saya_context` queries
 return real trust-graded team knowledge from Saya's Convex brain; `saya_status`
 reports live bridge health; `saya_act` is the approval-first memory save path.
-
-The custom domain `https://mcp.saya.computer/mcp` is not routed yet, so clients
-should use the workers.dev origin until the public metadata changes.
